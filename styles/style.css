@@ -17,14 +17,16 @@ body {
     height: 70%;
     width: 90%;
     max-width: 1000px;
+    max-height: 800px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(10, 15, 20, 1);
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -230,10 +232,12 @@ nav {
     position: absolute;
     bottom: 0;
     right: 0;
-    opacity: 0.5;
+    opacity: 0.;
+    filter: grayscale(100%);
 }
 .robothalf-image:hover {
     opacity: 1;
+    filter: grayscale(0%);
 }
 
 #robotdance-image {
@@ -273,7 +277,6 @@ nav {
     transform: translate(-50%, -45%);
     justify-items: center;
 }
-
 
 #second-section p {
     width: 80%;
@@ -318,6 +321,19 @@ html::-webkit-scrollbar {
 #products-container a {
     text-decoration: none;
 }
+
+#products-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+/* Change the width and color of the scrollbar */
+#products-container::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+}
+
 
 .products {
     /* background-color: rgba(206, 206, 206, 0.2); */
