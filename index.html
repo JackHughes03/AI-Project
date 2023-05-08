@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <img id="main-image" src="images/main.png">
+    <!-- <video id="video" autoplay muted>
+        <source src="videos/atomshortfade.mp4" type="video/mp4">
+    </video> -->
+    <form action="https://api.staticforms.xyz/submit" method="post">
+        <img onclick="closeform()" id="x" src="images/icons/x.png">
+        <input class="form-class" type="text" name="name" placeholder="Your Name">
+        <input class="form-class" type="text" name="email" placeholder="Your Email" />
+        <textarea class="form-class" type="message" name="message" placeholder="Message"></textarea>
+        <input type="text" name="honeypot" style="display:none">
+        <input type="hidden" name="accessKey" value="a9c83c81-8349-4e8e-bd40-9dec56f96f97">
+        <input type="hidden" name="subject" value="Contact us from - example.com" />
+        <input type="hidden" name="replyTo" value="@">
+        <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+        <input class="form-class" type="submit" value="Send" />
+    </form>
+    
+    <div id="main-content">
+        <nav id="left-nav">
+            <a onclick="menuclick()" class="main-buttons"><img id="main-button-image" src="images/nav/home.png"></a>
+            
+            <div id="menu-container">
+                <a onclick="main()" class="main-buttons"><img class="main-button-images" src="images/nav/home.png"></a>
+                <a onclick="mainblue()" class="main-buttons"><img class="main-button-images" src="images/nav/home.png"></a>
+                <a onclick="maindark()" class="main-buttons"><img class="main-button-images" src="images/nav/home.png"></a>
+                <a onclick="maingreen()" class="main-buttons"><img class="main-button-images" src="images/nav/home.png"></a>
+            </div>
+        </nav>
+        
+        <nav id="top-nav">
+            <img id="logo" src="images/nav/logo.png">
+            
+            <div id="topbutton-collection">
+                <a href="#second-section" class="button-collection">About</a>
+                <a href="#third-section" class="button-collection">Projects</a>
+                <a onclick="showform()" class="button-collection">Contact</a>
+            </div>
+            <a href="#second-section" id="maintop-button">See more</a>
+        </nav>
+        
+        <section id="first-section">
+            <h1>Learn more about the depth and growth of AI</h1>
+            <p>Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction. Particular applications of AI include expert systems, speech recognition and machine vision. </p>
+            <!-- <p id="second-paragraph">AI can be categorized as either weak or strong. Weak AI, also known as narrow AI, is an AI system that is designed and trained for a particular task. Virtual personal assistants, such as Apple's Siri, are a form of weak AI. Strong AI, also known as artificial general intelligence, is an AI system with generalized human cognitive abilities. When presented with an unfamiliar task, a strong AI system is able to find a solution without human intervention.</p> -->
+            <img class="robothalf-image" src="images/robotohalfnoback.png">
+            <img id="robotmid-image" class="robothalf-image" src="images/robothalf.png">
+            <img id="robotdance-image" class="robothalf-image" src="images/robotdance.png">
+        </section>
+        
+        <section id="second-section">
+            <h1>AI is a broad topic</h1>
+            <div id="paragraph-container">
+                <p>AI can be categorized as either weak or strong. Weak AI, also known as narrow AI, is an AI system that is designed and trained for a particular task. Virtual personal assistants, such as Apple's Siri, are a form of weak AI. Strong AI, also known as artificial general intelligence, is an AI system with generalized human cognitive abilities. When presented with an unfamiliar task, a strong AI system is able to find a solution without human intervention.</p>
+                <p>Because hardware, software and staffing costs for AI can be expensive, many vendors are including AI components in their standard offerings, as well as access to Artificial Intelligence as a Service (AIaaS) platforms. AI as a Service allows individuals and companies to experiment with AI for various business purposes and sample multiple platforms before making a commitment. Popular AI cloud offerings include Amazon AI services, IBM Watson Assistant, Microsoft Cognitive Services and Google AI services.</p>
+                <p>More than 1,300 AI vendors claim to offer AI technology -- either as a component within a larger offering or as a stand-alone tool -- to customers. These vendors range from giants such as Amazon, Apple, Google and IBM to smaller companies that specialize in AI.</p>
+                <p>AI is incorporated into a variety of different types of technology. Here are seven examples.</p>
+            </div>
+        </section>
+        
+        <section id="third-section">
+            <div id="products-container">
+                <div class="products" id="product-1">
+                    <img class="products-image" src="images/icons/chatgpt.png">
+                    <h2>ChatGPT</h2>
+                </div>
+                <div class="products" id="product-2">
+                    <img class="products-image" src="images/icons/midjourney.png">
+                    <h2>MidJourney</h2>
+                </div>
+                <div class="products" id="product-3">
+                    <img class="products-image" src="images/icons/mailmentor.png">
+                    <h2>MailMentor</h2>
+                </div>
+                <div class="products" id="product-4">
+                    <img class="products-image" src="images/icons/otter.png">
+                    <h2>Otter</h2>
+                </div>->
+                <div class="products" id="product-5">
+                    <img class="products-image" src="images/icons/copy.png">
+                    <h2>Copy</h2>
+                </div>
+                <div class="products" id="product-6">
+                    <img class="products-image" src="images/icons/quillbot.png">
+                    <h2>QuillBot</h2>
+                </div>
+                <div class="products" id="product-7">
+                    <img class="products-image" src="images/icons/kuki.png">
+                    <h2>Kuki</h2>
+                </div>
+                <div class="products" id="product-8">
+                    <img class="products-image" src="images/icons/airbrush.png">
+                    <h2>Airbrush</h2>
+                </div>
+                <div class="products" id="product-9">
+                    <img class="products-image" src="images/icons/pabbly.png">
+                    <h2>Pabbly</h2>
+                </div>
+                <div class="products" id="product-10">
+                    <img class="products-image" src="images/icons/tinywow.png">
+                    <h2>TinyWow</h2>
+                </div>
+                <div class="products" id="product-11">
+                    <img class="products-image" src="images/icons/alternative.png">
+                    <h2>AlternativeTo</h2>
+                </div>
+                <div class="products" id="product-12">
+                    <img class="products-image" src="images/icons/jasper.png">
+                    <h2>JasperAI</h2>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+    
+    <script src="scripts/index.js" async defer></script>
+</body>
+</html>
