@@ -3,61 +3,72 @@
     src: url('../fonts/GREENPIL.otf');
 }
 
-body {
-    /* background: linear-gradient(to right, rgb(74, 53, 87), #121222); */
-    background: linear-gradient(to right, rgb(16, 21, 25), #1a2745);
-    cursor: none;
-}
-
-#main-content {
-    /* background: linear-gradient(to right, rgba(10, 15, 20, 0.9), rgba(35, 9, 35, 0.9), rgba(10, 15, 20, 0.9)); */
-    /* background-size: 200% 200%; */
-    /* animation: gradient 25s ease infinite; */
-    font-family: 'system-ui';
-    height: 70%;
-    width: 90%;
-    max-width: 1000px;
+#main-content, .main-buttons img, #products-container, form {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+#main-content::-webkit-scrollbar-track, #main-content::-webkit-scrollbar, section::-webkit-scrollbar-track, section::-webkit-scrollbar, #menu-container, html::-webkit-scrollbar, form {
+    display: none;
+}
+#first-section p, #maintop-button:hover, .button-collection:hover, h1, #second-section p, h2, footer {
+    color: white;
+}
+#first-section p, #left-nav, .main-buttons, #top-nav, #topbutton-collection, h1, video, #main-image, #learn-button, .robothalf-image, #second-paragraph, #second-section h1, #paragraph-container, footer, #x {
+    position: absolute;
+}
+body, #maintop-button, .button-collection, .products, .form-class, input[type="submit"] {
+    cursor: none;
+}
+
+body {
+    /* background: linear-gradient(to right, rgb(74, 53, 87), #121222); */
+    background: linear-gradient(to right, rgb(16, 21, 25), #1a2745);
+    /* background-repeat: no-repeat; */
+    background-size: cover;    
+}
+
+#shownav {
+    position: absolute;
+    width: 25px;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    display: none;
+}
+
+#main-content {
+    font-family: 'system-ui';
+    height: 70%;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 800px;
     border-radius: 5px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(10, 15, 20, 1);
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 section {
     scroll-snap-align: start;
     position: relative;
-    scroll-behavior: smooth;
     overflow-y: scroll;
     height: 100%;
 }
 
-#main-content::-webkit-scrollbar-track, #main-content::-webkit-scrollbar {
-    display: none;
-}
-section::-webkit-scrollbar-track, section::-webkit-scrollbar {
-    display: none;
-}
-
 #first-section p {
-    color: white;
     font-weight: lighter;
     font-size: 18px;
     width: 60%;
     margin-top: 220px;
     margin-left: 125px;
     background-color: rgba(206, 206, 206, 0.2);
-    color: white;
     padding: 20px;
-    position: absolute;
-    /* bottom: 50px; */
     border-radius: 5px;
 }
 #first-section img {
@@ -72,15 +83,17 @@ section::-webkit-scrollbar-track, section::-webkit-scrollbar {
     width: 60px;
     top: 0;
     height: 100%;
-    position: absolute;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .main-buttons {
     width: 60px;
     height: 55px;
-    position: absolute;
     background-color: #76767635;
 }
+.main-buttons:hover .main-button-images {
+    opacity: 1;
+}
+
 .main-buttons:hover {
     background-color: #76767652;
 }
@@ -97,17 +110,11 @@ section::-webkit-scrollbar-track, section::-webkit-scrollbar {
 
 .main-buttons img {
     width: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #menu-container {
     height: 250px;
     width: 60px;
-    display: none;
-    /* border: 1px solid red; */
 }
 #menu-container a:nth-child(1) {
     margin-top: 70px;
@@ -126,9 +133,7 @@ section::-webkit-scrollbar-track, section::-webkit-scrollbar {
     width: 95%;
     height: 60px;
     top: 0;
-    /* border: 2px solid red; */
     right: 0;
-    position: absolute;
 }
 
 #maintop-button {
@@ -139,17 +144,11 @@ section::-webkit-scrollbar-track, section::-webkit-scrollbar {
     margin-right: 15px;
     color: rgba(255, 255, 255, 0.4);
     border-radius: 2px;
-    cursor: none;
     text-decoration: none;
     transition: 200ms;
 }
-#maintop-button:hover {
-    color: white;
-}
 
 #topbutton-collection {
-    /* border: 2px solid red; */
-    position: absolute;
     right: 150px;
     top: 20px;
     width: 255px;
@@ -160,28 +159,20 @@ section::-webkit-scrollbar-track, section::-webkit-scrollbar {
     margin-right: 15px;
     color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
-    cursor: none;
-}
-.button-collection:hover {
-    color: white;
 }
 
 h1 {
-    color: white;
     width: 500px;
     font-size: 50px;
-    position: absolute;
     left: 130px;
     top: 50px;
     font-family: 'green-pillow';
-    /* letter-spacing: 3px; */
     font-weight: lighter;
 }
 
 #video {
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
     object-fit: cover;
@@ -189,18 +180,15 @@ h1 {
 }
 
 #main-image {
-    position: absolute;
     width: 99%;
     height: 99%;
     object-fit: cover;
     filter: blur(50px);
     transition: 1000ms;
     animation: fadein 2s;
-    /* opacity: 1; */
 }
 
 #learn-button {
-    position: absolute;
     left: 50%;
     transform: translate(-50%);
     width: 100px;
@@ -227,13 +215,14 @@ nav {
 
 .robothalf-image {
     width: 200px;
-    position: absolute;
     bottom: 0;
     right: 0;
-    opacity: 0.5;
+    opacity: 0.4;
+    filter: grayscale(100%);
 }
 .robothalf-image:hover {
     opacity: 1;
+    filter: grayscale(0%);
 }
 
 #robotdance-image {
@@ -247,18 +236,15 @@ nav {
 }
 
 #second-paragraph {
-    position: absolute;
     top: 200px;
 }
 
 #second-section h1 {
-    position: absolute;
     top: 5px;
     left: 50px;
     font-size: 50px;
     font-family: 'green-pillow';
     font-weight: lighter;
-    color: white;
 }
 #paragraph-container {
     display: grid;
@@ -266,30 +252,22 @@ nav {
     grid-template-rows: repeat(2, 1fr);
     width: 80%;
     height: 500px;
-    /* border: 2px solid red; */
-    position: absolute;
     left: 50%;
     top: 55%;
     transform: translate(-50%, -45%);
     justify-items: center;
 }
 
-
 #second-section p {
     width: 80%;
-    color: white;
     font-weight: lighter;
     font-size: 18px;
     background-color: rgba(206, 206, 206, 0.2);
     padding: 20px;
     border-radius: 5px;
     overflow-y: scroll;
-    /* margin-left: 20px; */
 }
 
-html::-webkit-scrollbar {
-    display: none;
-}
 /* Hide the background of the scrollbar */
 #second-section p::-webkit-scrollbar {
     background-color: transparent;
@@ -304,42 +282,76 @@ html::-webkit-scrollbar {
 }
 
 #products-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+/*    display: grid;*/
+/*    grid-template-columns: repeat(3, 1fr);*/
+/*    grid-gap: 10px;*/
     width: 95%;
-    height: 690px;
-    /* border: 2px solid red; */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: 96%;
+    margin-top: 7px;
+    overflow: scroll;
 }
 #products-container a {
     text-decoration: none;
 }
 
+#products-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+/* Change the width and color of the scrollbar */
+#products-container::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+}
+
 .products {
-    /* background-color: rgba(206, 206, 206, 0.2); */
-    height: 165px;
+/*    height: 140px;*/
     border-radius: 15px;
-    transition: 550ms;
-    /* filter: grayscale(100%); */
+    transition: 250ms;
     display: flex;
     align-items: center;
-    cursor: none;
     opacity: 0.7;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
 }
 .products:hover {
-    background-color: rgba(20, 25, 30, 1);
+    background-color: rgba(255, 255, 255, 0.3);
     opacity: 1;
 }
 
 .products-image {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     margin-left: 10px;
+}
+.products p {
+    color: white;
+    height: 90%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.products p::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+/* Change the width and color of the scrollbar */
+.products p::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+}
+
+#product-3, #product-10 {
+    padding: 10px 0 10px 0;
 }
 
 #product-5 img, #product-6 img, #product-7 img, #product-8 img, #product-9 img, #product-10 img, #product-11 img, #product-12 img {
@@ -347,9 +359,7 @@ html::-webkit-scrollbar {
 }
 
 h2 {
-    color: white;
     margin-left: 10px;
-    /* background-color: rgb(20, 25, 30); */
     border-radius: 5px;
     padding: 8px;
 }
@@ -357,18 +367,10 @@ h2 {
 form {
     width: 60%;
     max-width: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     background-color: rgb(30, 35, 40);
     padding: 20px;
     border-radius: 10px;
-    display: none;
     z-index: 1;
-}
-.form-class {
-    cursor: none;
 }
 
 input,
@@ -390,7 +392,6 @@ input[type="submit"] {
     padding: 10px;
     font-size: 16px;
     width: 50%;
-    cursor: none;
 }
 
 input[type="submit"]:hover {
@@ -403,8 +404,6 @@ input[type="submit"]:focus {
 }
 
 footer {
-    color: white;
-    position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translate(-50%, 0%);
@@ -413,7 +412,6 @@ footer {
 #x {
     padding: 2px;
     width: 20px;
-    position: absolute;
     right: 10px;
 }
 
