@@ -1,24 +1,24 @@
-@media only screen and (max-width: 1000px) {
-    #robotdance-image {
-        display: none;
+@media only screen and (max-width: 1000px) { /* If screen is 1000px and below */
+    #robotdance-image { /* This is the middle robot */
+        display: none; /* Hide it because there is no space */
     }
 }
 
 @media only screen and (max-width: 670px) {
-    #main-content {
+    #main-content { /* Main content (floating part) of the document */
         height: 100%;
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%; /* Set the width and height as 100% because the floating part was too small on smaller screen devices */
+        max-width: unset; /* Remove max height and width because it is no longer needed if the width and height is 100% */
+        max-height: unset;
     }
 
-    #first-section p {
+    #first-section p { /* Modify the paragraph section in the middle as the width and height changes its position */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         margin-left: unset;
         margin-top: 170px;
-        animation: none;
+        animation: none; /* Remove the animation to help loading speed and it messes up */
     }
 
     #first-section h1 {
@@ -26,10 +26,10 @@
         left: 50%;
         transform: translateX(-50%);
         width: 70%;
-        font-size: 2rem;
+        font-size: 2rem; /* Change the font size to match screen width so it is smaller. A bigger font doesn't look good */
     }
 
-    #second-section h1 {
+    #second-section h2 { /* Title of the second section */
         font-size: 2rem;
         left: 50%;
         transform: translateX(-50%);
@@ -40,27 +40,18 @@
 
 @media only screen and (max-width: 570px) {
     #paragraph-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        top: 50%;
-        transform: translate(-50%, -50%);
+        grid-template-columns: 1fr; /* Make one column. This is for the second section and works well smaller screen resolutions. */
+        bottom: 10px;
     }
 
-    #second-section p {
-        height: 70px;
+    #second-section p { /* This is the paragraph sections inside of the paragraph-container. I didn't put a height on this as the boxes resize based on content within. */
         font-size: 14px;
-        margin-top: 0;
-    }
-}
-
-
-@media only screen and (max-width: 415px) {
-    #topbutton-collection {
-        display: none;
+        margin-top: 0; /* Make sure the content is at the top */
     }
 
-    #shownav {
-        display: block;
+    #second-section h2 {
+        top: 10px;
+        left: 160px;
     }
 }
 
@@ -75,6 +66,14 @@
 
     #robotmid-image {
         left: 0;
+    }
+
+    #topbutton-collection { /* Hide the navigation buttons on the top nav */
+        display: none;
+    }
+
+    #shownav { /* Display the 2 lines image */
+        display: block;
     }
 }
 

@@ -1,9 +1,9 @@
-@font-face {
+@font-face { /* Custom font which I thought matched the feel of the web page  */
     font-family: 'green-pillow';
     src: url('../fonts/GREENPIL.otf');
 }
 
-#main-content, .main-buttons img, #products-container, form {
+#main-content, .main-buttons img, #products-container, form { /* This was repeated 4 times which took 16 lines. Using common selectors took it down to 4 */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -15,82 +15,91 @@
 #first-section p, #maintop-button:hover, .button-collection:hover, h1, #second-section p, h2, footer {
     color: white;
 }
-#first-section p, #left-nav, .main-buttons, #top-nav, #topbutton-collection, h1, video, #main-image, #learn-button, .robothalf-image, #second-paragraph, #second-section h1, #paragraph-container, footer, #x {
+#first-section p, #left-nav, .main-buttons, #top-nav, #topbutton-collection, h1, video, #main-image, #learn-button, .robothalf-image, #second-paragraph, #second-section h2, #paragraph-container, footer, #x {
     position: absolute;
 }
-body, #maintop-button, .button-collection, .products, .form-class, input[type="submit"] {
+body, #maintop-button, .button-collection, .products, .form-class, input[type="submit"], .main-buttons { /* Hide cursor from all the places where it appears as i have a custom cursor  */
     cursor: none;
+}
+/* Hide the background of the scrollbar */
+#second-section p::-webkit-scrollbar, #products-container::-webkit-scrollbar, .products p::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+/* Change the width and color of the scrollbar */
+#second-section p::-webkit-scrollbar-thumb, #products-container::-webkit-scrollbar-thumb, .products p::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: none;
+    border-radius: 50px;
 }
 
 body {
-    /* background: linear-gradient(to right, rgb(74, 53, 87), #121222); */
-    background: linear-gradient(to right, rgb(16, 21, 25), #1a2745);
-    /* background-repeat: no-repeat; */
-    background-size: cover;    
+    background: linear-gradient(to right, rgb(16, 21, 25), #1a2745); /* Linear gradient to match the background image incase of overlaps */
+    background-size: cover;
 }
 
-#shownav {
+#shownav { /* Button to show the navigation bar on lower screen widths. Hidden by default */
     position: absolute;
     width: 25px;
     top: 20px;
     left: 20px;
-    z-index: 2;
+    z-index: 2; /* Make sure content is on top so it is visible */
     display: none;
 }
 
 #main-content {
-    font-family: 'system-ui';
-    height: 70%;
+    font-family: 'system-ui'; /* Set font as a familiar one */
+    height: 70%; /*  */
     width: 90%;
-    max-width: 1000px;
+    max-width: 1000px; /* Prevent content from exceeding the max height and width */
     max-height: 800px;
     border-radius: 5px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 50px rgba(10, 15, 20, 1);
-    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100vh); /* From here down I implented a snapping scroll point feature which I found was fitting for the content of this website. When the user scrolls down it snaps into place. */
     scroll-snap-type: y mandatory;
     overflow: scroll;
     scroll-behavior: smooth;
 }
 
-section {
-    scroll-snap-align: start;
+section { /* Customise each section of the main content */
+    scroll-snap-align: start; /* Snap to the top of each section */
     position: relative;
-    overflow-y: scroll;
-    height: 100%;
+    overflow-y: scroll; /* If content overflows the section then enable scrolling */
+    height: 100%; /* Make sure the sections fill the height of the main content */
 }
 
-#first-section p {
-    font-weight: lighter;
+#first-section p { /* Customise the paragraph of the first section */
+    font-weight: lighter; /* Change the font weight to lighter because the default is too bold and not readable */
     font-size: 18px;
-    width: 60%;
-    margin-top: 220px;
+    width: 60%; /* Set the width for design purposes */
+    margin-top: 220px; /* Set the margins so it is positioned correctly */
     margin-left: 125px;
-    background-color: rgba(206, 206, 206, 0.2);
-    padding: 20px;
+    background-color: rgba(206, 206, 206, 0.2); /* Used rgba so I can set the alpha of the colour so it is slightly transparent so the background still shows through */
+    padding: 20px; /* Add some padding so there is space around the text */
     border-radius: 5px;
 }
 #first-section img {
-    transition: 200ms;
+    transition: 200ms; /* Added transition so when the robot images are hovered then it will slowly change */
 }
 
 .main-button-images {
-    opacity: 0.2;
+    opacity: 0.2; /* Set the opacity of the buttons so it can be changed to 1 once hovered */
 }
 
 #left-nav {
     width: 60px;
     top: 0;
     height: 100%;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Only set the right border property as an all round border isn't neccessary because of the border of the main content */
 }
 .main-buttons {
     width: 60px;
     height: 55px;
     background-color: #76767635;
 }
-.main-buttons:hover .main-button-images {
+.main-buttons:hover .main-button-images { /* When main-buttons is hovered then customise .main-button-images*/
     opacity: 1;
 }
 
@@ -98,131 +107,94 @@ section {
     background-color: #76767652;
 }
 
-.main-buttons:hover .main-buttons-images {
-    opacity: 1;
-}
-
-#logo {
+#logo { /* Customise the websites logo */
     width: 25px;
     margin-left: 35px;
     margin-top: 17px;
 }
+.main-buttons {
+    border: none; /* Remove the border off the default button look */
+}
 
 .main-buttons img {
-    width: 50%;
+    width: 50%; /* Set the width of the images as 50% of the container, which will be the button width */
 }
 
 #menu-container {
     height: 250px;
     width: 60px;
 }
-#menu-container a:nth-child(1) {
-    margin-top: 70px;
+#menu-container button:nth-child(1) { /* This saves me from having to create a seperate ID for each button and also makes it clearer. This checks which button inside of the container */
+    margin-top: 70px; /* Set the margin top value so the buttons have specific distances */
 }
-#menu-container a:nth-child(2) {
+#menu-container button:nth-child(2) {
     margin-top: 127px;
 }
-#menu-container a:nth-child(3) {
+#menu-container button:nth-child(3) {
     margin-top: 184px;
 }
-#menu-container a:nth-child(4) {
+#menu-container button:nth-child(4) {
     margin-top: 241px;
 }
 
 #top-nav {
     width: 95%;
     height: 60px;
-    top: 0;
+    top: 0; /* Set the top and right values so the navigation bar is positioned all the way at the edges. Position is already set as absolute with common selectors at the top */
     right: 0;
 }
 
 #maintop-button {
-    background: linear-gradient(to right, rgb(91, 39, 97), rgb(0, 89, 255));
-    float: right;
-    padding: 8px 18px;
+    background: linear-gradient(to right, rgb(91, 39, 97), rgb(0, 89, 255)); /* Create a purple to blue gradient for the top right button */
+    float: right; /* Float the button to the right */
+    padding: 8px 18px; /* Make the buttons padding 8px height and 18px width */
     margin-top: 15px;
     margin-right: 15px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4); /* Set colour to white but alpha as 0.4 so when hovered it can go to 1 */
     border-radius: 2px;
-    text-decoration: none;
-    transition: 200ms;
+    text-decoration: none; /* Remove the underline */
+    transition: 200ms; /* Add a transition so its not snappy */
 }
 
 #topbutton-collection {
-    right: 150px;
-    top: 20px;
+    right: 150px; /* Set the top navigation buttons to the right but not all the way */
+    top: 20px; /* Move them down slightly */
     width: 255px;
 }
 
 .button-collection {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 15px 15px; /* This could be margin left and right set to 15px but its shorter to do this */
     color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
 }
 
 h1 {
     width: 500px;
-    font-size: 50px;
+    font-size: 50px; /* Set the h1 font size higher so it matches the design better */
     left: 130px;
     top: 50px;
-    font-family: 'green-pillow';
-    font-weight: lighter;
+    font-family: 'green-pillow'; /* Use the font that I imported at the top */
+    font-weight: lighter; /* Make the font weight lighter as the original is too thick */
 }
 
-#video {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    z-index: -1;
-}
-
-#main-image {
-    width: 99%;
+#main-image { /* The main image that sits in the background */
+    width: 99%; /* Set the width and height as 99% to stop overflows and scrollbars appearing */
     height: 99%;
-    object-fit: cover;
-    filter: blur(50px);
-    transition: 1000ms;
-    animation: fadein 2s;
+    object-fit: cover; /* Maintain aspect ratio */
+    filter: blur(50px); /* Blur it 50px so content is readable */
+    animation: fadein 2s; /* Set an animation for the image */
 }
 
-#learn-button {
-    left: 50%;
-    transform: translate(-50%);
-    width: 100px;
-    height: 100px;
-    background-color: rgba(142, 142, 142, 0.241);
-    border-radius: 100%;
-    bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.429);
-    transition: 300ms;
-}
-#learn-button:hover {
-    background-color: rgba(240, 255, 255, 0.74);
-    color: black;
-    font-size: 20px;
-}
-
-nav {
-    position: fixed;
-    z-index: 1;
-}
-
-.robothalf-image {
+.robothalf-image { /* Customise the robot images */
     width: 200px;
-    bottom: 0;
+    bottom: 0; /* Set the bottom property so it sits at the bottom of the first section */
     right: 0;
     opacity: 0.4;
-    filter: grayscale(100%);
+    filter: grayscale(100%); /* Set the opacity as 0.4 and grayscale as 100% so it is out the way until user has hovered */
 }
 .robothalf-image:hover {
     opacity: 1;
-    filter: grayscale(0%);
+    filter: grayscale(0%); /* Remove grayscale for effect purposes */
 }
 
 #robotdance-image {
@@ -239,81 +211,47 @@ nav {
     top: 200px;
 }
 
-#second-section h1 {
+#second-section h2 {
     top: 5px;
     left: 50px;
-    font-size: 50px;
     font-family: 'green-pillow';
     font-weight: lighter;
+    font-size: 50px;
 }
 #paragraph-container {
-    display: grid;
+    display: grid; /* Display it as a grid */
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); /* Set the rows and columns as 2 by 2 for what is inside */
     width: 80%;
     height: 500px;
     left: 50%;
     top: 55%;
-    transform: translate(-50%, -45%);
-    justify-items: center;
+    transform: translate(-50%, -45%); /* Center in the middle but slightly off for the top */
+    justify-items: center; /* Without using this, the content isnt centered properly */
 }
 
-#second-section p {
+#second-section p { /* This is for the content grid inside of the container */
     width: 80%;
     font-weight: lighter;
     font-size: 18px;
     background-color: rgba(206, 206, 206, 0.2);
-    padding: 20px;
+    padding: 20px; /* Add some space around the text */
     border-radius: 5px;
-    overflow-y: scroll;
+    overflow-y: scroll; /* If content overflows then add a scrollbar */
 }
 
-/* Hide the background of the scrollbar */
-#second-section p::-webkit-scrollbar {
-    background-color: transparent;
-    width: 5px;
-}
-
-/* Change the width and color of the scrollbar */
-#second-section p::-webkit-scrollbar-thumb {
-    background-color: black;
-    border: none;
-    border-radius: 50px;
-}
-
-#products-container {
-/*    display: grid;*/
-/*    grid-template-columns: repeat(3, 1fr);*/
-/*    grid-gap: 10px;*/
+#products-container { /* I would use overflow scroll on this but it scrolls anyway so this saves the scrollbars from appearing */
     width: 95%;
     height: 96%;
     margin-top: 7px;
-    overflow: scroll;
-}
-#products-container a {
-    text-decoration: none;
-}
-
-#products-container::-webkit-scrollbar {
-    background-color: transparent;
-    width: 5px;
-}
-
-/* Change the width and color of the scrollbar */
-#products-container::-webkit-scrollbar-thumb {
-    background-color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50px;
 }
 
 .products {
-/*    height: 140px;*/
     border-radius: 15px;
     transition: 250ms;
-    display: flex;
-    align-items: center;
+    display: flex; /* Display the products as flex so i can align the items vertically inside */
+    align-items: center; /* Using this */
     opacity: 0.7;
-    overflow: hidden;
     background-color: rgba(255, 255, 255, 0.2);
     margin-bottom: 10px;
 }
@@ -324,7 +262,7 @@ nav {
 
 .products-image {
     width: 100px;
-    height: 100px;
+    height: 100px; /* Set the products image as 100px on the height and width which is the perfect size for the products */
     margin-left: 10px;
 }
 .products p {
@@ -334,20 +272,8 @@ nav {
     display: flex;
     align-items: center;
     width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-}
-
-.products p::-webkit-scrollbar {
-    background-color: transparent;
-    width: 5px;
-}
-
-/* Change the width and color of the scrollbar */
-.products p::-webkit-scrollbar-thumb {
-    background-color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50px;
+    margin-left: auto; /* Set this property to auto so the content is made sure to be all the way to the right */
+    margin-right: 10px; /* Make sure it is not all the way on the right */
 }
 
 #product-3, #product-10 {
@@ -355,7 +281,7 @@ nav {
 }
 
 #product-5 img, #product-6 img, #product-7 img, #product-8 img, #product-9 img, #product-10 img, #product-11 img, #product-12 img {
-    border-radius: 15px;
+    border-radius: 15px; /* Set the border radius as 15px for the product images that dont have a radius */
 }
 
 h2 {
@@ -370,43 +296,40 @@ form {
     background-color: rgb(30, 35, 40);
     padding: 20px;
     border-radius: 10px;
-    z-index: 1;
+    z-index: 1; /* Make sure the content is on the front */
 }
 
 input,
 textarea {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin: 5px 0; /* So there is space in between the inputs */
+    padding: 10px; /* Add some space for design purposes */
+    border: none;
+    border-radius: 4px; /* I didn't like the sharp edges */
     font-size: 16px;
-    width: 85%;
+    width: 85%; /* Set the width of 85% for design purposes so it doesn't take the full width of the form */
 }
 
-input[type="submit"] {
+input[type="submit"] { /* Customising the submit button */
     margin-top: 10px;
     background-color: #007bff;
     color: #fff;
-    border: none;
     border-radius: 4px;
     padding: 10px;
     font-size: 16px;
     width: 50%;
 }
 
-input[type="submit"]:hover {
-    background-color: #0069d9;
-}
-
-input[type="submit"]:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+input[type="submit"]:hover { /* If the send button is hovered */
+    background-color: #0069d9; /* Change the blue to slightly darker */
 }
 
 footer {
     bottom: 10px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%); /* Set the position of the footer as the center */
+    font-family: system-ui;
+    font-size: 14px;
+    color: #ccc;
 }
 
 #x {
@@ -415,22 +338,10 @@ footer {
     right: 10px;
 }
 
-@keyframes gradient {
+@keyframes slidein { /* Animaiton to slide from the left to the right */
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes slidein {
-    0% {
-        opacity: 0;
-        transform: translateX(-10%);
+        opacity: 0; /* Set the opacity as 0 so we can make it 1 once animation is at 100% */
+        transform: translateX(-10%); /* Move element slightly left */
     }
     100% {
         opacity: 1;
@@ -438,7 +349,7 @@ footer {
     }
 }
 
-@keyframes fadein {
+@keyframes fadein { /* This is used for the fade in for the main image */
     0% {
         opacity: 0;
     }
