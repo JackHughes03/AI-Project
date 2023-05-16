@@ -45,6 +45,7 @@ window.onload = function() { // On document load
     var atag = document.getElementsByTagName('a');
     const ptag = document.getElementsByTagName('p');
     var buttontag = document.getElementsByTagName('button');
+    var clickabletitle = document.getElementsByClassName('clickable-title');
     var x = document.getElementById('x'); // Collect all the neccessary elements
 
     for (var i = 0; i < ptag.length; i++) { // Loop round all the p tags
@@ -83,6 +84,8 @@ window.onload = function() { // On document load
     SetHoverEffect(atag);
     // if .form-class is hovered
     SetHoverEffect(formclass);
+    // if clickable title is hovered. This is for the links to each product
+    SetHoverEffect(clickabletitle);
     
     x.onmouseover = function() { // If the mouse is over the x which is the close button for the form
         x.onmouseout = function() { // If the mouse is out of the x
@@ -189,3 +192,32 @@ function Showbuttons() { // Function to show navigation buttons on smaller scree
         buttoncollection[i].style.borderRadius = buttoncollection[i].style.borderRadius == "5px" ? "0px" : "5px";
     }
 }
+
+// if screen size is below 500px
+// if (window.matchMedia("(min-width: 500px)").matches) {
+//     var shownav = document.getElementById('shownav');
+//     var topbuttoncollection = document.getElementById('topbutton-collection');
+//     var buttoncollection = document.getElementsByClassName('button-collection');
+
+//     shownav.src = "./images/nav/homeclose.png";
+//     shownav.style.height = "30px";
+
+//     topbuttoncollection.style.width = "100%";
+//     topbuttoncollection.style.backgroundColor = "transparent";
+//     topbuttoncollection.style.borderRadius = "0px";
+//     topbuttoncollection.style.padding = "0px";
+//     topbuttoncollection.style.left = "50%";
+//     topbuttoncollection.style.display = "none";
+//     topbuttoncollection.style.zIndex = "unset";
+//     topbuttoncollection.style.textAlign = "unset";
+
+//     for (var i = 0; i < buttoncollection.length; i++) {
+//         buttoncollection[i].style.display = "none";
+//         buttoncollection[i].style.color = "rgba(255, 255, 255, 0.4)";
+//         buttoncollection[i].style.backgroundColor = "transparent";
+//         buttoncollection[i].style.width = "unset";
+//         buttoncollection[i].style.marginLeft = "unset";
+//         buttoncollection[i].style.padding = "0px";
+//         buttoncollection[i].style.borderRadius = "0px";
+//     }
+// }

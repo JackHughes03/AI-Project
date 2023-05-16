@@ -159,7 +159,7 @@ section { /* Customise each section of the main content */
 #topbutton-collection {
     right: 150px; /* Set the top navigation buttons to the right but not all the way */
     top: 20px; /* Move them down slightly */
-    width: 255px;
+    width: 265px;
 }
 
 .button-collection {
